@@ -19,11 +19,6 @@ export class AppComponent {
             title: 'List',
             url: '/list',
             icon: 'list'
-        },
-        {
-            title: 'Difficulties',
-            url: '/difficulties',
-            icon: 'game-controller-b'
         }
     ];
 
