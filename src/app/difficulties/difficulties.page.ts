@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-difficulties',
   templateUrl: './difficulties.page.html',
@@ -11,5 +12,12 @@ export class DifficultiesPage implements OnInit {
 
   ngOnInit() {
   }
+
+    goTo() {
+
+      /*  this.navCtrl.push(SecondPage, {
+            param1: 'John',
+        });*/
+    }
 
 }

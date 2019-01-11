@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>difficulties</ion-title>
+    <ion-title>Difficulty level</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -49,26 +49,30 @@
   <ion-grid>
     <ion-row>
       <ion-col col-12 col-sm>
-        1 of 4
+        Description
       </ion-col>
       <ion-col col-12 col-sm>
-        2 of 4
+        Description
       </ion-col>
       <ion-col col-12 col-sm>
-        3 of 4
+        Description
       </ion-col>
     </ion-row>
   </ion-grid>
   <ion-grid>
     <ion-row>
       <ion-col col-12 col-sm>
-        <button ion-button>Default</button>
+<!--
+        <ion-button>Select</ion-button>
+-->
+        <ion-button (click)="goTo()">About Page</ion-button>
+
       </ion-col>
       <ion-col col-12 col-sm>
-        <button ion-button>Default</button>
+        <ion-button>Select</ion-button>
       </ion-col>
       <ion-col col-12 col-sm>
-        <button ion-button>Default</button>
+        <ion-button>Select</ion-button>
       </ion-col>
     </ion-row>
   </ion-grid>
