@@ -14,7 +14,9 @@ const routes: Routes = [
   {
     path: 'list',
     loadChildren: './list/list.module#ListPageModule'
-  },  { path: 'difficulties', loadChildren: './difficulties/difficulties.module#DifficultiesPageModule' }
+  },  { path: 'difficulties', loadChildren: './difficulties/difficulties.module#DifficultiesPageModule' },
+  { path: 'level', loadChildren: './level/level.module#LevelPageModule' },
+  { path: 'results', loadChildren: './results/results.module#ResultsPageModule' }
 
 ];
 
