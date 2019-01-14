@@ -10,9 +10,7 @@ export class HomePage {
 
     constructor(private router: Router) {}
 
-
-    redirectToDifficultiesPage() {
-        this.router.navigateByUrl('/difficulties');
+    play(){
+      this.router.navigateByUrl('/quizz');
     }
-
 }

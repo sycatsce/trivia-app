@@ -1,0 +1,7 @@
+<b> {{ question.question }} </b><br/>
+<div id="answers-box">
+    <div *ngFor="let answer of answers; let i = index">
+        <ion-button id="answer{{i}}" (click)="selectAnswer(answer, i)"> {{ answer }} </ion-button> 
+    </div>
+</div>
+<ion-button *ngIf="nextQuestionDisplay" (click)="nextQuestion()">Next Question</ion-button>
