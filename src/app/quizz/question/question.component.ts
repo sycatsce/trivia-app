@@ -15,18 +15,32 @@ export class QuestionComponent implements OnInit {
   @Input() correctAnswer: String;
 
   @Output() nextEvent = new EventEmitter();
-
+  @Output() pointEvent = new EventEmitter();
   constructor() { }
 
   ngOnInit() {
   }
 
   selectAnswer(answer: string, index: any){
+    //Check answer
     if (this.correctAnswer === answer){
-      $('#answer'+index).prop('color', 'secondary');      
+      $('#answer'+index).prop('color', 'secondary');
+      this.pointEvent.emit(true);
     } else {
       $('#answer'+index).prop('color', 'danger');
+      this.pointEvent.emit(false);
     }
+
+    //Color answers
+    $('#answers-box').children().each( (id) => {
+      $('#answer'+id).prop('disabled', 'true');
+      if (this.correctAnswer !== $('#answer'+id).text().trim()){
+        $('#answer'+id).prop('color', 'danger');
+      } else {
+        $('#answer'+id).prop('color', 'secondary');
+      }
+    })
+
     this.nextQuestionDisplay = true;
   }
 

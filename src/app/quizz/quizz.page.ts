@@ -14,10 +14,16 @@ export class QuizzPage implements OnInit {
   difficultyDisplay: Boolean = false;
   readyDisplay: Boolean = false;
   questionsDisplay: Boolean = false;
+  resultsDisplay: Boolean = false;
+  timerDisplay: Boolean = false;
 
   difficulty: string = "";
   username: string = "Guest"
-  
+  avatar: string = "";
+  points: any = 0;
+  timeScore: any = 0;
+  timer: boolean = false;
+
   constructor(private storage: Storage) { }
 
   ngOnInit() {
@@ -35,6 +41,9 @@ export class QuizzPage implements OnInit {
     this.storage.get('pseudo').then( (val) => {
       if(val){
         this.username = val;
+        this.storage.get('avatar').then( (val) => {
+          this.avatar = val;
+        })
       }
     })
 
@@ -42,8 +51,24 @@ export class QuizzPage implements OnInit {
     this.readyDisplay = true;
   }
 
+  endGame(points: any){
+    this.points = points;
+    this.questionsDisplay = false;
+    this.resultsDisplay = true;
+  }
+
+  stopTimer(){
+    this.timer = false;
+  }
+
+  setTimeScore(score){
+    this.timeScore = score;
+  }
+
   startQuestions(){
     this.readyDisplay = false;
     this.questionsDisplay = true;
+    this.timerDisplay = true;
+    this.timer = true;
   }
 }

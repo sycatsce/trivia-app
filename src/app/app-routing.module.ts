@@ -17,6 +17,7 @@ const routes: Routes = [
   },
   { path: 'quizz', loadChildren: './quizz/quizz.module#QuizzPageModule' },
   { path: 'signup', loadChildren: './signup/signup.module#SignupPageModule' }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

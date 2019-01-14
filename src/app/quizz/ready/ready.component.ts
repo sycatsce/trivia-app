@@ -9,6 +9,7 @@ export class ReadyComponent implements OnInit {
   
   @Input() difficulty: string;
   @Input() username: string;
+  @Input() avatar: string;
 
   @Output() startEvent = new EventEmitter();
 
