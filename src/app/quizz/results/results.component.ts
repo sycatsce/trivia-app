@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-results',
@@ -7,9 +9,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResultsComponent implements OnInit {
 
-  constructor() { }
+  @Input() avatar: any;
+  @Input() difficulty: any;
+  @Input() username: any;
+  @Input() points: any;
+  @Input() time: any;
+
+  constructor(private http: HttpClient) { }
 
   ngOnInit() {
+  }
+
+  sendResults(){
+    let payload = {
+      nickname: this.username,
+      score: this.points,
+      time: this.time,
+      avatar_url: this.avatar
+    }
+
+    let httpOptions = { headers: new HttpHeaders({'Content-Type': 'application/json' }) };
+    this.http.post('https://leaderboard.lp1.eu/api/score', payload, httpOptions).subscribe( (data: any) => {
+      $('#sendButton').text('Done');
+      $('#sendButton').prop('disabled', 'true');
+    })
   }
 
 }

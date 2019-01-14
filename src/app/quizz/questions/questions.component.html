@@ -6,6 +6,6 @@
 
 <ion-content padding>
   
-  <app-question (nextEvent)="nextQuestion()" [question]="question" [correctAnswer]="correctAnswer" [answers]="answers"></app-question>
+  <app-question (nextEvent)="nextQuestion()" (pointEvent)="updateScore($event)" [question]="question" [correctAnswer]="correctAnswer" [answers]="answers"></app-question>
 
 </ion-content>

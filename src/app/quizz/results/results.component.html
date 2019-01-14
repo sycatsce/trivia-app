@@ -1,3 +1,15 @@
-<p>
-  results works!
-</p>
+<ion-header>
+  <ion-toolbar>
+    <ion-title> Results </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<div>
+  <p> User : {{ username }} </p>
+  <img src="{{ avatar }}"/>
+  <p> Difficulty : {{ difficulty }} </p>
+  <b> Score: {{ points }} </b>
+  <b> Time: {{ time / 1000 }} sec</b>
+</div>
+
+<ion-button id="sendButton" (click)="sendResults()">Send results to leaderboard</ion-button>

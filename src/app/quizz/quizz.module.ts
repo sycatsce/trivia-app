@@ -13,6 +13,7 @@ import { ReadyComponent } from './ready/ready.component';
 import { ResultsComponent } from './results/results.component';
 import { QuestionsComponent } from './questions/questions.component';
 import { QuestionComponent } from './question/question.component';
+import { TimerComponent } from './timer/timer.component';
 
 const routes: Routes = [
   {
@@ -30,6 +31,6 @@ const routes: Routes = [
     IonicStorageModule.forRoot(),
     HttpClientModule,
   ],
-  declarations: [QuizzPage, DifficultiesComponent, ReadyComponent, ResultsComponent, QuestionsComponent, QuestionComponent]
+  declarations: [QuizzPage, DifficultiesComponent, ReadyComponent, ResultsComponent, QuestionsComponent, QuestionComponent, TimerComponent]
 })
 export class QuizzPageModule {}

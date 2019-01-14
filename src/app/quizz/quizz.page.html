@@ -21,7 +21,11 @@
 
   <app-difficulties *ngIf="difficultyDisplay" (difficultyEvent)="setDifficulty($event)"></app-difficulties>
 
-  <app-ready *ngIf="readyDisplay" [difficulty]="difficulty" [username]="username" (startEvent)="startQuestions()"></app-ready>
+  <app-ready *ngIf="readyDisplay" [difficulty]="difficulty" [username]="username" [avatar]="avatar" (startEvent)="startQuestions()"></app-ready>
 
-  <app-questions *ngIf="questionsDisplay" [difficulty]="difficulty" [username]="username"></app-questions>
+  <app-questions *ngIf="questionsDisplay" (stopTimer)=stopTimer() (endGame)=endGame($event) [difficulty]="difficulty" [username]="username"></app-questions>
+
+  <app-timer *ngIf="timerDisplay" (timeScore)="setTimeScore($event)" [timer]="timer"></app-timer>
+
+  <app-results [difficulty]="difficulty" [username]="username" [avatar]="avatar" [points]="points" [time]="timeScore" *ngIf="resultsDisplay"></app-results>
 </ion-content>
