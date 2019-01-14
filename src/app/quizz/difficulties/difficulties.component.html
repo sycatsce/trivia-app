@@ -1,0 +1,51 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-title>Difficulty</ion-title>
+    </ion-toolbar>
+</ion-header>
+  
+<ion-content padding>  
+  <ion-card-header>
+    <ion-card-title>Choose your level</ion-card-title>
+  </ion-card-header>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col col-12 col-sm>
+        Easy
+      </ion-col>
+      <ion-col col-12 col-sm>
+        Medium
+      </ion-col>
+      <ion-col col-12 col-sm>
+        Hard
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-12 col-sm>
+        Description
+      </ion-col>
+      <ion-col col-12 col-sm>
+        Description
+      </ion-col>
+      <ion-col col-12 col-sm>
+        Description
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-12 col-sm>
+        <ion-button (click)="selectDifficulty('easy')">Select</ion-button>
+      </ion-col>
+      <ion-col col-12 col-sm>
+        <ion-button (click)="selectDifficulty('medium')">Select</ion-button>
+      </ion-col>
+      <ion-col col-12 col-sm>
+        <ion-button (click)="selectDifficulty('hard')">Select</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

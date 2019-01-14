@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title> Ready ? </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-card-header>
+    <ion-card-title> Level : {{ difficulty|uppercase }} </ion-card-title>
+  </ion-card-header>
+
+  <ion-item>  User : {{ username }} </ion-item>
+  <ion-button (click)="start()"> GO </ion-button>
+
+</ion-content>
